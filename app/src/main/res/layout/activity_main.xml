@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#80FFA000"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftGuide"
@@ -42,52 +42,52 @@
                 android:layout_height="wrap_content"
                 android:iconifiedByDefault="false"
                 android:queryHint="Search city"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableLeft="@drawable/icon"
+        android:textAlignment="center"
+        android:drawablePadding="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/rightguide"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:drawableLeft="@drawable/icon"
-        android:drawablePadding="2dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/rightguide"
-        app:layout_constraintHorizontal_bias="0.385"
-        app:layout_constraintStart_toStartOf="@+id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:hint="Text View"
-        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:text="Today"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/rightguide"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
-        app:layout_constraintTop_toBottomOf="@+id/cityName" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/currentTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00.00 °C"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toEndOf="@+id/cityName"
+        app:layout_constraintStart_toStartOf="@+id/cityName"
+        app:layout_constraintTop_toBottomOf="@+id/cityName" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
@@ -96,36 +96,37 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityName"/>
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <TextView
+        android:id="@+id/dayStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:text="Sunny"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
         app:layout_constraintStart_toStartOf="@+id/leftGuide"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/maxTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="28dp"
         android:text="Max: 00.00 °C"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/rightguide"
-        app:layout_constraintHorizontal_bias="0.546"
-        app:layout_constraintStart_toStartOf="@+id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="@+id/currentTemp"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="@+id/currentTemp"
+        app:layout_constraintTop_toBottomOf="@+id/currentTemp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/mintemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -133,48 +134,49 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/rightguide"
+        app:layout_constraintEnd_toEndOf="@+id/maxTemp"
         app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="@+id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/maxTemp"
+        app:layout_constraintTop_toBottomOf="@+id/maxTemp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/currentDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="76dp"
         android:text="Tuesday"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toStartOf="@+id/rightguide"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/mintemp" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/currentDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:text="20jan,2023"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="@+id/currentDay"
+        app:layout_constraintStart_toStartOf="@+id/currentDay"
+        app:layout_constraintTop_toBottomOf="@+id/currentDay" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="220dp"
-        android:layout_marginTop="15dp"
-        app:cardBackgroundColor="#66FFFFFF"
+        android:layout_marginTop="20dp"
         android:outlineSpotShadowColor="@color/white"
+        app:cardBackgroundColor="#66FFFFFF"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@id/rightguide"
         app:layout_constraintStart_toStartOf="@id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@+id/currentDate">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -192,7 +194,6 @@
 
 
             <LinearLayout
-
                 android:id="@+id/linearLayout2"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -206,23 +207,23 @@
                     android:src="@drawable/group_18" />
 
                 <TextView
+                    android:id="@+id/condition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Condition"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
-
                 android:id="@+id/linearLayout3"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -236,23 +237,23 @@
                     android:src="@drawable/group_27" />
 
                 <TextView
+                    android:id="@+id/sunSetMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Sunset"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
-
                 android:id="@+id/linearLayout4"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -266,23 +267,23 @@
                     android:src="@drawable/group_29" />
 
                 <TextView
+                    android:id="@+id/windSpeedMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Windspeed"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
-
                 android:id="@+id/linearLayout5"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -296,23 +297,23 @@
                     android:src="@drawable/group_30" />
 
                 <TextView
+                    android:id="@+id/seaLevel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Sea level"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
-
                 android:id="@+id/linearLayout"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -326,19 +327,20 @@
                     android:src="@drawable/group_31" />
 
                 <TextView
+                    android:id="@+id/sunRiseMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Sunrise"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -355,19 +357,20 @@
                     android:src="@drawable/vector" />
 
                 <TextView
+                    android:id="@+id/tempMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
+                    android:text="text"
                     android:textColor="@color/black"
-                    android:text="text" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="text" />
+                    android:text="Humidity"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

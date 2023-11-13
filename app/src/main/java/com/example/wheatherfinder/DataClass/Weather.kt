@@ -1,4 +1,4 @@
-package com.example.wheatherfinder
+package com.example.wheatherfinder.DataClass
 
 data class Weather(
     val description: String,

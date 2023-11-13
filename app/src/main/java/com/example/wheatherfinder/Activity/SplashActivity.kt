@@ -1,4 +1,4 @@
-package com.example.wheatherfinder
+package com.example.wheatherfinder.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
-        }, 5000)
+        }, 3000)
         finish()
     }
 }

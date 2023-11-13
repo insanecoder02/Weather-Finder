@@ -1,5 +1,6 @@
-package com.example.wheatherfinder
+package com.example.wheatherfinder.Interfaces
 
+import com.example.wheatherfinder.DataClass.weatherdetails
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
